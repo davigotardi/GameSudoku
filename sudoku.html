@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+    <style>
+        #sudoku-board td {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        #sudoku-board tr:nth-child(3n) td, 
+        #sudoku-board tr td:nth-child(3n) {
+            border-right: 2px solid black;
+        }
+
+        #sudoku-board tr:nth-child(3n+1) td {
+            border-top: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Sudoku</h2>
+<table id="sudoku-board"></table>
+<button onclick="displaySudokuBoard()">Mostrar Tabuleiro Sudoku</button>
+
+<script>
+    const sudokuBoard = [
+        [5, 3, 0, 0, 7, 0, 0, 0, 0],
+        [6, 0, 0, 1, 9, 5, 0, 0, 0],
+        [0, 9, 8, 0, 0, 0, 0, 6, 0],
+        [8, 0, 0, 0, 6, 0, 0, 0, 3],
+        [4, 0, 0, 8, 0, 3, 0, 0, 1],
+        [7, 0, 0, 0, 2, 0, 0, 0, 6],
+        [0, 6, 0, 0, 0, 0, 2, 8, 0],
+        [0, 0, 0, 4, 1, 9, 0, 0, 5],
+        [0, 0, 0, 0, 8, 0, 0, 7, 9]
+    ];
+    const sudokuBoardElement = document.getElementById('sudoku-board');
+
+    function displaySudokuBoard() {
+        sudokuBoardElement.innerHTML = '';
+        for (let i = 0; i < 9; i++) {
+            const row = document.createElement('tr');
+            for (let j = 0; j < 9; j++) {
+                const cell = document.createElement('td');
+                if (sudokuBoard[i][j] !== 0) {
+                    cell.innerText = sudokuBoard[i][j];
+                } else {
+                    cell.contentEditable = true;
+                }
+                row.appendChild(cell);
+            }
+            sudokuBoardElement.appendChild(row);
+        }
+    }
+
+    displaySudokuBoard();
+</script>
+
+</body>
+</html>
+
