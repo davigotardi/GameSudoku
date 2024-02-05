@@ -14,11 +14,6 @@ This is a simple Sudoku game implemented in HTML and JavaScript. The game consis
 * The game keeps track of your progress and shows you how many cells you have filled in.
 * The game provides hints if you get stuck.
 
-## To-do list
-
-* Add a difficulty level setting.
-* Allow players to save and load games.
-* Add a multiplayer mode.
 
 ## Requirements
 
@@ -31,4 +26,3 @@ This is a simple Sudoku game implemented in HTML and JavaScript. The game consis
 3. Start playing!
 
 
-I hope this is helpful!
